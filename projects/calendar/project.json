@@ -1,0 +1,114 @@
+{
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "name": "calendar",
+  "projectType": "application",
+  "generators": {
+    "@schematics/angular:component": {
+      "style": "scss"
+    }
+  },
+  "sourceRoot": "projects/calendar/src",
+  "prefix": "app",
+  "targets": {
+    "build": {
+      "executor": "@angular-builders/custom-webpack:browser",
+      "options": {
+        "outputPath": "dist/calendar",
+        "index": "projects/calendar/src/index.html",
+        "main": "projects/calendar/src/main.ts",
+        "polyfills": "projects/calendar/src/polyfills.ts",
+        "tsConfig": "projects/calendar/tsconfig.app.json",
+        "inlineStyleLanguage": "scss",
+        "assets": [
+          "projects/calendar/src/favicon.ico",
+          "projects/calendar/src/assets"
+        ],
+        "styles": [
+          "projects/calendar/src/styles.scss"
+        ],
+        "scripts": [],
+        "customWebpackConfig": {
+          "path": "projects/calendar/webpack.config.js"
+        }
+      },
+      "configurations": {
+        "production": {
+          "budgets": [
+            {
+              "type": "initial",
+              "maximumWarning": "500kb",
+              "maximumError": "1mb"
+            },
+            {
+              "type": "anyComponentStyle",
+              "maximumWarning": "2kb",
+              "maximumError": "4kb"
+            }
+          ],
+          "fileReplacements": [
+            {
+              "replace": "projects/calendar/src/environments/environment.ts",
+              "with": "projects/calendar/src/environments/environment.prod.ts"
+            }
+          ],
+          "outputHashing": "all",
+          "customWebpackConfig": {
+            "path": "projects/calendar/webpack.config.js"
+          }
+        },
+        "development": {
+          "buildOptimizer": false,
+          "optimization": false,
+          "vendorChunk": true,
+          "extractLicenses": false,
+          "sourceMap": true,
+          "namedChunks": true
+        }
+      },
+      "defaultConfiguration": "production",
+      "outputs": [
+        "{options.outputPath}"
+      ]
+    },
+    "serve": {
+      "executor": "@angular-builders/custom-webpack:dev-server",
+      "options": {
+        "port": 5400,
+        "publicHost": "http://localhost:5400/"
+      },
+      "configurations": {
+        "production": {
+          "browserTarget": "calendar:build:production"
+        },
+        "development": {
+          "browserTarget": "calendar:build:development"
+        }
+      },
+      "defaultConfiguration": "development"
+    },
+    "extract-i18n": {
+      "executor": "@angular-builders/custom-webpack:extract-i18n",
+      "options": {
+        "browserTarget": "calendar:build"
+      }
+    },
+    "test": {
+      "executor": "@angular-builders/custom-webpack:karma",
+      "options": {
+        "main": "projects/calendar/src/test.ts",
+        "polyfills": "projects/calendar/src/polyfills.ts",
+        "tsConfig": "projects/calendar/tsconfig.spec.json",
+        "karmaConfig": "projects/calendar/karma.conf.js",
+        "inlineStyleLanguage": "scss",
+        "assets": [
+          "projects/calendar/src/favicon.ico",
+          "projects/calendar/src/assets"
+        ],
+        "styles": [
+          "projects/calendar/src/styles.scss"
+        ],
+        "scripts": []
+      }
+    }
+  }
+}
