@@ -1,4 +1,4 @@
-<div class="container" [class.overlay]="isLoading">
+<div class="container" [class.overlay]="stateService.isLoading">
   <div class="pre-condition">
     <fieldset>
       <label for="tableName">
@@ -24,10 +24,18 @@
       </label>
       <input type="date" id="toDate">
     </fieldset>
+
+    <fieldset>
+      <label for="typeFile">Loại file</label>
+      <select id="typeFile">
+        <option value="1">Excel</option>
+        <option value="2">Pdf</option>
+      </select>
+    </fieldset>
   </div>
   <hr>
   <div class="submit-area">
-    <button class="submit">Tải xuống</button>
+    <button class="submit" (click)="exportExcel()">Tải xuống</button>
   </div>
 </div>
 
