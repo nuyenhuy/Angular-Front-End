@@ -1,0 +1,42 @@
+<div class="container" [class.overlay]="isLoading">
+  <div class="pre-condition">
+    <fieldset>
+      <label for="tableName">
+        Tên bảng
+      </label>
+      <ng-container *ngIf="(gtables$ | async) as gtables">
+        <select id="tableName">
+          <option *ngFor="let gtable of gtables">{{ gtable.tableName }}</option>
+        </select>
+      </ng-container>
+    </fieldset>
+
+    <fieldset>
+      <label for="fromDate">
+        Từ ngày
+      </label>
+      <input type="date" id="fromDate">
+    </fieldset>
+
+    <fieldset>
+      <label for="toDate">
+        Đến ngày
+      </label>
+      <input type="date" id="toDate">
+    </fieldset>
+  </div>
+  <hr>
+  <div class="submit-area">
+    <button class="submit">Tải xuống</button>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+

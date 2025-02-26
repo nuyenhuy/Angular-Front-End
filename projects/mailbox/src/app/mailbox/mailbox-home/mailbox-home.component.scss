@@ -1,0 +1,77 @@
+:host {
+  display: block;
+  width: 100%;
+  border: 5px dashed deeppink;
+
+}
+.container {
+  display: flex;
+  flex-direction: column;
+  border: 2px solid #588ec4;
+  .pre-condition{
+    display: flex;
+    flex-direction: row;
+    fieldset {
+      display: flex;
+      flex-direction: column;
+      width: 10%;
+      border: none;
+      padding: 0;
+      margin: 10px;
+    }
+  }
+  .submit-area {
+    display: flex;
+    flex-direction: row;
+    justify-content: end;
+    margin-top: 5px;
+    button {
+      margin: 0 10px;
+    }
+    padding: 3px;
+  }
+  hr {
+    padding: 0;
+    margin: 0;
+  }
+}
+
+.overlay {
+  position: relative;
+
+  &:before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    background-color: rgba(0, 0, 0, 0.3);
+  }
+
+  &:after {
+    content: 'Loading';
+    font-size: 2rem;
+    font-weight: bold;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    animation: loadingText 1.5s infinite;
+  }
+}
+
+@keyframes loadingText {
+  0% { content: 'Loading'; }
+  25% { content: 'Loading.'; }
+  50% { content: 'Loading..'; }
+  75% { content: 'Loading...'; }
+  100% { content: 'Loading.'; }
+}
+
+
+

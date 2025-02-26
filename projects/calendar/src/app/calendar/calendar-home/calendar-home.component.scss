@@ -1,0 +1,40 @@
+:host {
+  display: block;
+  min-height: 200px;
+  width: 100%;
+  border: 5px dashed goldenrod;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  border: 2px solid #588ec4;
+  .pre-condition{
+    display: flex;
+    flex-direction: row;
+    fieldset {
+      display: flex;
+      flex-direction: column;
+      width: 10%;
+      border: none;
+      padding: 0;
+      margin: 10px;
+    }
+  }
+  .submit-area {
+    display: flex;
+    flex-direction: row;
+    justify-content: end;
+    margin-top: 5px;
+    button {
+      margin: 0 10px;
+    }
+    padding: 3px;
+  }
+  hr {
+    padding: 0;
+    margin: 0;
+  }
+}
+
+
