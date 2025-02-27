@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {BackendService} from "../backend.service";
-import {map, Observable} from "rxjs";
+import {catchError, map, Observable, of} from "rxjs";
 import {GTable} from "../../../../../mailbox/src/app/mailbox/table";
 import {FormBuilder, FormGroup, Validators} from "@angular/forms";
 
@@ -14,6 +14,8 @@ export class CalendarHomeComponent implements OnInit {
   protected formGroup: FormGroup = this.fb.group({
     file: [null, Validators.required]
   });
+  protected msg: string = '';
+  protected isSucess: boolean = false;
   constructor(public backend: BackendService, private fb: FormBuilder) {}
 
   ngOnInit(): void {
@@ -30,8 +32,18 @@ export class CalendarHomeComponent implements OnInit {
 
   onSubmit(event: Event): void {
     let file: File = this.formGroup.get('file')?.getRawValue();
-    this.backend.uploadFile(file).subscribe(data => {
-      console.log(data)
+    this.backend.uploadFileGraphQL(file).pipe(
+      catchError(error => {
+        this.msg = error.statusText;
+        this.isSucess = false;
+        return of(null);
+      })
+    ).subscribe(res => {
+      if (res) {
+        this.msg = res.message;
+        this.formGroup.get('file')?.reset();
+        this.isSucess = true;
+      }
     });
   }
 }

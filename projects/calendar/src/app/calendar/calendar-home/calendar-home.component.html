@@ -1,6 +1,6 @@
 <div class="container" [class.overlay]="backend.isLoading">
-  <div class="pre-condition">
-    <form [formGroup]="formGroup">
+  <form [formGroup]="formGroup">
+    <div class="pre-condition">
       <fieldset>
         <label for="tableName">
           Tên bảng
@@ -17,8 +17,10 @@
         </label>
         <input id="file" type="file" (change)="onFileChange($event)">
       </fieldset>
-    </form>
-  </div>
+    </div>
+    <p *ngIf="isSucess" class="msg-sucess">{{msg}}</p>
+    <p *ngIf="!isSucess" class="msg-error">{{msg}}</p>
+  </form>
   <hr>
   <div class="submit-area">
     <button class="submit" (click)="onSubmit($event)">Gửi file</button>

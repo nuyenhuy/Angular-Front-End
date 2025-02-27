@@ -1,44 +1,39 @@
 <div class="container" [class.overlay]="stateService.isLoading">
-  <div class="pre-condition">
-    <fieldset>
-      <label for="tableName">
-        Tên bảng
-      </label>
-      <ng-container *ngIf="(gtables$ | async) as gtables">
-        <select id="tableName">
-          <option *ngFor="let gtable of gtables">{{ gtable.tableName }}</option>
+  <form [formGroup]="formGroup">
+    <div class="pre-condition">
+      <fieldset>
+        <label for="tableName">Tên bảng</label>
+        <ng-container *ngIf="(gtables$ | async) as gtables">
+          <select id="tableName" [formControlName]="'tableName'">
+            <option *ngFor="let gtable of gtables" [value]="gtable.tableName">{{ gtable.tableName }}</option>
+          </select>
+        </ng-container>
+      </fieldset>
+
+      <fieldset>
+        <label for="fromDate">Từ ngày</label>
+        <input type="date" id="fromDate" [formControlName]="'fromDate'">
+      </fieldset>
+
+      <fieldset>
+        <label for="toDate">Đến ngày</label>
+        <input type="date" id="toDate" [formControlName]="'toDate'">
+      </fieldset>
+
+      <fieldset>
+        <label for="typeFile">Loại file</label>
+        <select id="typeFile" [formControlName]="'typeFile'">
+          <option value="excel">Excel</option>
+          <option value="pdf">Pdf</option>
         </select>
-      </ng-container>
-    </fieldset>
-
-    <fieldset>
-      <label for="fromDate">
-        Từ ngày
-      </label>
-      <input type="date" id="fromDate">
-    </fieldset>
-
-    <fieldset>
-      <label for="toDate">
-        Đến ngày
-      </label>
-      <input type="date" id="toDate">
-    </fieldset>
-
-    <fieldset>
-      <label for="typeFile">Loại file</label>
-      <select id="typeFile">
-        <option value="1">Excel</option>
-        <option value="2">Pdf</option>
-      </select>
-    </fieldset>
-  </div>
-  <hr>
-  <div class="submit-area">
-    <button class="submit" (click)="exportExcel()">Tải xuống</button>
-  </div>
+      </fieldset>
+    </div>
+    <hr>
+    <div class="submit-area">
+      <button class="submit" (click)="export()">Tải xuống</button>
+    </div>
+  </form>
 </div>
-
 
 
 

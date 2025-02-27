@@ -4,6 +4,7 @@ import { MailboxHomeComponent } from './mailbox-home/mailbox-home.component';
 import { RouterModule, Routes } from '@angular/router';
 import {HttpClientModule} from "@angular/common/http";
 import {StateService} from "./state.service";
+import {ReactiveFormsModule} from "@angular/forms";
 
 export const MAILBOX_ROUTES: Routes = [
   {
@@ -20,6 +21,7 @@ export const MAILBOX_ROUTES: Routes = [
     HttpClientModule,
     CommonModule,
     RouterModule.forChild(MAILBOX_ROUTES),
+    ReactiveFormsModule,
   ],
 
   providers: [HttpClientModule, StateService],

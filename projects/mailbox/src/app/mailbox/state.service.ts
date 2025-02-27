@@ -27,7 +27,7 @@ export class StateService {
     this.httpClient.post<any>(this.graphQLServer, { query }).pipe(
       switchMap(response => of(response).pipe(delay(800)))
     ).subscribe((response): void => {
-      const fileData = response.data.exportExcel || response.data.exportPDF;
+      const fileData = response.data.export;
       const binaryData: string = atob(fileData);
       const byteArray: Uint8Array = new Uint8Array(binaryData.length);
 
