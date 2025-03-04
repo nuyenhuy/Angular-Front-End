@@ -1,29 +1,29 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { MailboxHomeComponent } from './mailbox-home/mailbox-home.component';
+import { App1HomeComponent } from './app1-home/app1-home.component';
 import { RouterModule, Routes } from '@angular/router';
 import {HttpClientModule} from "@angular/common/http";
 import {StateService} from "./state.service";
 import {ReactiveFormsModule} from "@angular/forms";
 
-export const MAILBOX_ROUTES: Routes = [
+export const APP1_ROUTES: Routes = [
   {
     path: '',
-    component: MailboxHomeComponent,
+    component: App1HomeComponent,
   }
 ];
 
 @NgModule({
   declarations: [
-    MailboxHomeComponent
+    App1HomeComponent
   ],
   imports: [
     HttpClientModule,
     CommonModule,
-    RouterModule.forChild(MAILBOX_ROUTES),
+    RouterModule.forChild(APP1_ROUTES),
     ReactiveFormsModule,
   ],
 
   providers: [HttpClientModule, StateService],
 })
-export class MailboxModule { }
+export class App1Module { }

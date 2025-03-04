@@ -1,15 +1,15 @@
 import {Component, OnInit} from '@angular/core';
 import {BackendService} from "../backend.service";
 import {catchError, map, Observable, of} from "rxjs";
-import {GTable} from "../../../../../mailbox/src/app/mailbox/table";
+import {GTable} from "../../../../../app1/src/app/app1/table";
 import {FormBuilder, FormGroup, Validators} from "@angular/forms";
 
 @Component({
-  selector: 'app-calendar-home',
-  templateUrl: './calendar-home.component.html',
-  styleUrls: ['./calendar-home.component.scss']
+  selector: 'app-app2-home',
+  templateUrl: './app2-home.component.html',
+  styleUrls: ['./app2-home.component.scss']
 })
-export class CalendarHomeComponent implements OnInit {
+export class App2HomeComponent implements OnInit {
   protected gtables$: Observable<GTable[]> = this.backend.getListTable().pipe(map((gtable: any) => gtable.data.tables));
   protected formGroup: FormGroup = this.fb.group({
     file: [null, Validators.required]

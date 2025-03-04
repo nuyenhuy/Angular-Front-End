@@ -21,8 +21,8 @@ module.exports = {
         type: 'module',
       },
       remotes: {
-        mailbox: 'http://localhost:5300/remoteEntry.js',
-        calendar: 'http://localhost:5400/remoteEntry.js',
+        app1: 'http://localhost:5300/remoteEntry.js',
+        app2: 'http://localhost:5400/remoteEntry.js',
       },
       /**
        * shared can be an object of type SharedConfig

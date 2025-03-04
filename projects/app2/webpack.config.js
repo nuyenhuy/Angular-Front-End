@@ -4,7 +4,7 @@ const { ModuleFederationPlugin } = require('webpack').container;
 module.exports = {
   output: {
     publicPath: 'auto', // we setup the `publicHost` in `angular.json` file
-    uniqueName: 'calendar',
+    uniqueName: 'app2',
   },
   optimization: {
     runtimeChunk: false,
@@ -15,14 +15,14 @@ module.exports = {
   },
   plugins: [
     new ModuleFederationPlugin({
-      name: 'calendar',
+      name: 'app2',
       library: {
         // because Angular v14 will output ESModule
         type: 'module',
       },
       filename: 'remoteEntry.js',
       exposes: {
-        './CalendarModule': 'projects/calendar/src/app/calendar/calendar.module.ts',
+        './App2Module': 'projects/app2/src/app/app2/app2.module.ts',
       },
       /**
        * shared can be an object of type SharedConfig

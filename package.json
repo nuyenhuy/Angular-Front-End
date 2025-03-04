@@ -8,8 +8,8 @@
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "start:shell": "ng serve --project=shell",
-    "start:mailbox": "ng serve --project=mailbox",
-    "start:calendar": "ng serve --project=calendar"
+    "start:app1": "ng serve --project=app1",
+    "start:app2": "ng serve --project=app2"
   },
   "private": true,
   "dependencies": {

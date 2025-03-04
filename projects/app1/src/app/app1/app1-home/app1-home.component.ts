@@ -5,11 +5,11 @@ import {GTable} from "../table";
 import {FormBuilder, FormGroup, Validators} from "@angular/forms";
 
 @Component({
-  selector: 'app-mailbox-home',
-  templateUrl: './mailbox-home.component.html',
-  styleUrls: ['./mailbox-home.component.scss']
+  selector: 'app-app1-home',
+  templateUrl: './app1-home.component.html',
+  styleUrls: ['./app1-home.component.scss']
 })
-export class MailboxHomeComponent implements OnInit {
+export class App1HomeComponent implements OnInit {
   protected formGroup: FormGroup = this.fb.group({
     tableName: ['dimCustomer', Validators.required],
     fromDate: [''],

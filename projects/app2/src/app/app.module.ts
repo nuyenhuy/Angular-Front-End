@@ -6,12 +6,12 @@ import { AppComponent } from './app.component';
 export const APP_ROUTES: Routes = [
   {
     path: '',
-    redirectTo: 'calendar',
+    redirectTo: 'app2',
     pathMatch: 'full'
   },
   {
-    path: 'calendar',
-    loadChildren: () => import('./calendar/calendar.module').then(m => m.CalendarModule),
+    path: 'app2',
+    loadChildren: () => import('./app2/app2.module').then(m => m.App2Module),
   }
 ];
 

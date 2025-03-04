@@ -1,28 +1,28 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule, Routes } from '@angular/router';
-import { CalendarHomeComponent } from './calendar-home/calendar-home.component';
+import { App2HomeComponent } from './app2-home/app2-home.component';
 import {HttpClientModule} from "@angular/common/http";
 import {BackendService} from "./backend.service";
 import {ReactiveFormsModule} from "@angular/forms";
 
-export const CALENDAR_ROUTES: Routes = [
+export const APP2_ROUTES: Routes = [
   {
     path: '',
-    component: CalendarHomeComponent,
+    component: App2HomeComponent,
   }
 ];
 
 @NgModule({
   declarations: [
-    CalendarHomeComponent
+    App2HomeComponent
   ],
   imports: [
     HttpClientModule,
     CommonModule,
-    RouterModule.forChild(CALENDAR_ROUTES),
+    RouterModule.forChild(APP2_ROUTES),
     ReactiveFormsModule,
   ],
   providers: [HttpClientModule, BackendService]
 })
-export class CalendarModule { }
+export class App2Module { }

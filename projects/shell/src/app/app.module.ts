@@ -7,12 +7,12 @@ import { HttpClientModule } from '@angular/common/http';
 
 const routes: Routes = [
   {
-    path: 'mailbox',
-    loadChildren: () => import('mailbox/MailboxModule').then(m => m.MailboxModule)
+    path: 'app1',
+    loadChildren: () => import('app1/App1Module').then(m => m.App1Module)
   },
   {
-    path: 'calendar',
-    loadChildren: () => import('calendar/CalendarModule').then(m => m.CalendarModule)
+    path: 'app2',
+    loadChildren: () => import('app2/App2Module').then(m => m.App2Module)
   }
 ];
 

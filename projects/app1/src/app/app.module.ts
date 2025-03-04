@@ -12,11 +12,11 @@ export const APP_ROUTES: Routes = [
   {
     path: '',
     pathMatch: 'full',
-    redirectTo: 'mailbox',
+    redirectTo: 'app1',
   },
   {
-    path: 'mailbox',
-    loadChildren: () => import('./mailbox/mailbox.module').then(m => m.MailboxModule)
+    path: 'app1',
+    loadChildren: () => import('./app1/app1.module').then(m => m.App1Module)
   }
 ];
 

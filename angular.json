@@ -113,36 +113,36 @@
         }
       }
     },
-    "mailbox": {
+    "app1": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
           "style": "scss"
         }
       },
-      "root": "projects/mailbox",
-      "sourceRoot": "projects/mailbox/src",
+      "root": "projects/app1",
+      "sourceRoot": "projects/app1/src",
       "prefix": "app",
       "architect": {
         "build": {
           "builder": "@angular-builders/custom-webpack:browser",
           "options": {
-            "outputPath": "dist/mailbox",
-            "index": "projects/mailbox/src/index.html",
-            "main": "projects/mailbox/src/main.ts",
-            "polyfills": "projects/mailbox/src/polyfills.ts",
-            "tsConfig": "projects/mailbox/tsconfig.app.json",
+            "outputPath": "dist/app1",
+            "index": "projects/app1/src/index.html",
+            "main": "projects/app1/src/main.ts",
+            "polyfills": "projects/app1/src/polyfills.ts",
+            "tsConfig": "projects/app1/tsconfig.app.json",
             "inlineStyleLanguage": "scss",
             "assets": [
-              "projects/mailbox/src/favicon.ico",
-              "projects/mailbox/src/assets"
+              "projects/app1/src/favicon.ico",
+              "projects/app1/src/assets"
             ],
             "styles": [
-              "projects/mailbox/src/styles.scss"
+              "projects/app1/src/styles.scss"
             ],
             "scripts": [],
             "customWebpackConfig": {
-              "path": "projects/mailbox/webpack.config.js"
+              "path": "projects/app1/webpack.config.js"
             }
           },
           "configurations": {
@@ -161,13 +161,13 @@
               ],
               "fileReplacements": [
                 {
-                  "replace": "projects/mailbox/src/environments/environment.ts",
-                  "with": "projects/mailbox/src/environments/environment.prod.ts"
+                  "replace": "projects/app1/src/environments/environment.ts",
+                  "with": "projects/app1/src/environments/environment.prod.ts"
                 }
               ],
               "outputHashing": "all",
               "customWebpackConfig": {
-                "path": "projects/mailbox/webpack.prod.config.js"
+                "path": "projects/app1/webpack.prod.config.js"
               }
             },
             "development": {
@@ -189,10 +189,10 @@
           },
           "configurations": {
             "production": {
-              "browserTarget": "mailbox:build:production"
+              "browserTarget": "app1:build:production"
             },
             "development": {
-              "browserTarget": "mailbox:build:development"
+              "browserTarget": "app1:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -200,59 +200,59 @@
         "extract-i18n": {
           "builder": "@angular-builders/custom-webpack:extract-i18n",
           "options": {
-            "browserTarget": "mailbox:build"
+            "browserTarget": "app1:build"
           }
         },
         "test": {
           "builder": "@angular-builders/custom-webpack:karma",
           "options": {
-            "main": "projects/mailbox/src/test.ts",
-            "polyfills": "projects/mailbox/src/polyfills.ts",
-            "tsConfig": "projects/mailbox/tsconfig.spec.json",
-            "karmaConfig": "projects/mailbox/karma.conf.js",
+            "main": "projects/app1/src/test.ts",
+            "polyfills": "projects/app1/src/polyfills.ts",
+            "tsConfig": "projects/app1/tsconfig.spec.json",
+            "karmaConfig": "projects/app1/karma.conf.js",
             "inlineStyleLanguage": "scss",
             "assets": [
-              "projects/mailbox/src/favicon.ico",
-              "projects/mailbox/src/assets"
+              "projects/app1/src/favicon.ico",
+              "projects/app1/src/assets"
             ],
             "styles": [
-              "projects/mailbox/src/styles.scss"
+              "projects/app1/src/styles.scss"
             ],
             "scripts": []
           }
         }
       }
     },
-    "calendar": {
+    "app2": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
           "style": "scss"
         }
       },
-      "root": "projects/calendar",
-      "sourceRoot": "projects/calendar/src",
+      "root": "projects/app2",
+      "sourceRoot": "projects/app2/src",
       "prefix": "app",
       "architect": {
         "build": {
           "builder": "@angular-builders/custom-webpack:browser",
           "options": {
-            "outputPath": "dist/calendar",
-            "index": "projects/calendar/src/index.html",
-            "main": "projects/calendar/src/main.ts",
-            "polyfills": "projects/calendar/src/polyfills.ts",
-            "tsConfig": "projects/calendar/tsconfig.app.json",
+            "outputPath": "dist/app2",
+            "index": "projects/app2/src/index.html",
+            "main": "projects/app2/src/main.ts",
+            "polyfills": "projects/app2/src/polyfills.ts",
+            "tsConfig": "projects/app2/tsconfig.app.json",
             "inlineStyleLanguage": "scss",
             "assets": [
-              "projects/calendar/src/favicon.ico",
-              "projects/calendar/src/assets"
+              "projects/app2/src/favicon.ico",
+              "projects/app2/src/assets"
             ],
             "styles": [
-              "projects/calendar/src/styles.scss"
+              "projects/app2/src/styles.scss"
             ],
             "scripts": [],
             "customWebpackConfig": {
-              "path": "projects/calendar/webpack.config.js"
+              "path": "projects/app2/webpack.config.js"
             }
           },
           "configurations": {
@@ -271,13 +271,13 @@
               ],
               "fileReplacements": [
                 {
-                  "replace": "projects/calendar/src/environments/environment.ts",
-                  "with": "projects/calendar/src/environments/environment.prod.ts"
+                  "replace": "projects/app2/src/environments/environment.ts",
+                  "with": "projects/app2/src/environments/environment.prod.ts"
                 }
               ],
               "outputHashing": "all",
               "customWebpackConfig": {
-                "path": "projects/calendar/webpack.config.js"
+                "path": "projects/app2/webpack.config.js"
               }
             },
             "development": {
@@ -299,10 +299,10 @@
           },
           "configurations": {
             "production": {
-              "browserTarget": "calendar:build:production"
+              "browserTarget": "app2:build:production"
             },
             "development": {
-              "browserTarget": "calendar:build:development"
+              "browserTarget": "app2:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -310,23 +310,23 @@
         "extract-i18n": {
           "builder": "@angular-builders/custom-webpack:extract-i18n",
           "options": {
-            "browserTarget": "calendar:build"
+            "browserTarget": "app2:build"
           }
         },
         "test": {
           "builder": "@angular-builders/custom-webpack:karma",
           "options": {
-            "main": "projects/calendar/src/test.ts",
-            "polyfills": "projects/calendar/src/polyfills.ts",
-            "tsConfig": "projects/calendar/tsconfig.spec.json",
-            "karmaConfig": "projects/calendar/karma.conf.js",
+            "main": "projects/app2/src/test.ts",
+            "polyfills": "projects/app2/src/polyfills.ts",
+            "tsConfig": "projects/app2/tsconfig.spec.json",
+            "karmaConfig": "projects/app2/karma.conf.js",
             "inlineStyleLanguage": "scss",
             "assets": [
-              "projects/calendar/src/favicon.ico",
-              "projects/calendar/src/assets"
+              "projects/app2/src/favicon.ico",
+              "projects/app2/src/assets"
             ],
             "styles": [
-              "projects/calendar/src/styles.scss"
+              "projects/app2/src/styles.scss"
             ],
             "scripts": []
           }
